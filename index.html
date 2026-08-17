@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+	<title>Артем — Веб-разработчик | Портфолио & Разработка кейсов</title>
+	<meta name="description"
+		content="Портфолио веб-разработчика Артема. Создание современных, высокоскоростных сайтов и веб-приложений на чистом HTML, CSS, JavaScript. Быстрая загрузка, темная тема и безупречный UX." />
+
+	<!-- Preconnect for Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+		rel="stylesheet" />
+
+	<!-- Main Styles -->
+	<link rel="stylesheet" href="./src/styles/main.css" />
+</head>
+
+<body>
+
+	<!-- ==========================================================================
+       1. HEADER BLOCK
+       ========================================================================== -->
+	<header class="site-header" id="header">
+		<div class="container header-inner">
+			<a href="#hero" class="logo" id="logo">
+				<span class="logo-badge">A</span>
+				<span>Артем<span class="logo-dot">.dev</span></span>
+			</a>
+
+			<nav class="nav-menu" id="nav-menu">
+				<a href="#about" class="nav-link">О мне</a>
+				<a href="#skills" class="nav-link">Навыки</a>
+				<a href="#portfolio" class="nav-link">Проекты</a>
+				<!-- <a href="#interactive" class="nav-link">Калькулятор</a> -->
+				<!-- <a href="#services" class="nav-link">Услуги</a> -->
+				<a href="#contact" class="nav-link">Контакты</a>
+			</nav>
+
+			<div class="header-actions">
+				<button id="theme-toggle" class="theme-toggle-btn" aria-label="Переключить тему">
+					<!-- Icon injected by JS -->
+				</button>
+				<a href="#contact" class="btn btn-primary header-cta">Связаться</a>
+				<button id="mobile-toggle" class="mobile-toggle" aria-label="Открыть меню">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+						stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+						<line x1="3" y1="12" x2="21" y2="12" />
+						<line x1="3" y1="6" x2="21" y2="6" />
+						<line x1="3" y1="18" x2="21" y2="18" />
+					</svg>
+				</button>
+			</div>
+		</div>
+	</header>
+
+	<!-- Mobile Drawer Menu -->
+	<div class="mobile-drawer-backdrop" id="drawer-backdrop"></div>
+	<aside class="mobile-drawer" id="mobile-drawer">
+		<div class="mobile-drawer-header">
+			<div class="logo">
+				<span class="logo-badge">A</span>
+				<span>Артем<span class="logo-dot">.dev</span></span>
+			</div>
+			<button class="drawer-close-btn" id="drawer-close" aria-label="Закрыть">✕</button>
+		</div>
+		<nav class="mobile-nav-menu">
+			<a href="#about" class="mobile-nav-link">О мне</a>
+			<a href="#skills" class="mobile-nav-link">Навыки</a>
+			<a href="#portfolio" class="mobile-nav-link">Проекты</a>
+			<a href="#interactive" class="mobile-nav-link">Интерактив</a>
+			<!-- <a href="#services" class="mobile-nav-link">Услуги</a> -->
+			<a href="#contact" class="mobile-nav-link">Контакты</a>
+		</nav>
+		<a href="#contact" class="btn btn-primary" style="width: 100%; margin-top: 20px;">Обсудить проект</a>
+	</aside>
+
+	<!-- ==========================================================================
+       2. HERO BLOCK
+       ========================================================================== -->
+	<section class="hero-section" id="hero">
+		<canvas id="hero-canvas" class="hero-canvas"></canvas>
+		<div class="hero-glow-1"></div>
+		<div class="hero-glow-2"></div>
+
+		<div class="container hero-container">
+			<div class="hero-grid">
+				<div class="hero-content reveal">
+					<div class="hero-status-pill">
+						<span class="status-dot"></span>
+						<span>Свободен для интересных веб-проектов</span>
+					</div>
+
+					<h1 class="hero-title">
+						Привет, я <span class="gradient-text">Артем</span>.<br />
+						Веб-разработчик.
+					</h1>
+
+					<p class="hero-description">
+						Создаю современные, высокоскоростные сайты и интерфейсы на чистом HTML, CSS и JavaScript. Гарантирую
+						чистую архитектуру и идеальный адаптив под любые устройства.
+					</p>
+
+					<div class="hero-actions">
+						<a href="#portfolio" class="btn btn-primary">
+							<span>Смотреть работы</span>
+							<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+								stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+								<line x1="5" y1="12" x2="19" y2="12" />
+								<polyline points="12 5 19 12 12 19" />
+							</svg>
+						</a>
+						<a href="#contact" class="btn btn-secondary">Обсудить проект</a>
+					</div>
+
+					<div class="hero-stats">
+						<div class="stat-item">
+							<span class="stat-number gradient-text">1+</span>
+							<span class="stat-label">Лет опыта</span>
+						</div>
+						<div class="stat-item">
+							<span class="stat-number gradient-text">10+</span>
+							<span class="stat-label">Кейсов сдано</span>
+						</div>
+						<div class="stat-item">
+							<span class="stat-number gradient-text">100%</span>
+							<span class="stat-label">PageSpeed Score</span>
+						</div>
+					</div>
+				</div>
+
+				<!-- Visual Editor Card -->
+				<div class="hero-visual-card reveal">
+					<div class="visual-header">
+						<div class="code-dots">
+							<span class="code-dot red"></span>
+							<span class="code-dot yellow"></span>
+							<span class="code-dot green"></span>
+						</div>
+						<span class="visual-title">artem_developer.js</span>
+					</div>
+
+					<div class="code-editor-body">
+						<div class="code-line"><span class="line-num">1</span><span><span class="code-keyword">const</span>
+								<span class="code-var">developer</span> = {</span></div>
+						<div class="code-line"><span class="line-num">2</span><span> name: <span
+									class="code-string">'Артем'</span>,</span></div>
+						<div class="code-line"><span class="line-num">3</span><span> role: <span class="code-string">'Frontend
+									Web Developer'</span>,</span></div>
+						<div class="code-line"><span class="line-num">4</span><span> stack: [<span
+									class="code-string">'HTML5'</span>, <span class="code-string">'CSS3'</span>, <span
+									class="code-string">'JavaScript ES6+'</span>],</span></div>
+						<div class="code-line"><span class="line-num">5</span><span> principles: [<span
+									class="code-string">'Чистый код'</span>, <span class="code-string">'100/100
+									Скорость'</span>],</span></div>
+						<div class="code-line"><span class="line-num">6</span><span> <span
+									class="code-func">buildProject</span>(idea) {</span></div>
+						<div class="code-line"><span class="line-num">7</span><span> <span class="code-keyword">return</span>
+								<span class="code-string">'Быстрый, адаптивный & конверсионный сайт'</span>;</span></div>
+						<div class="code-line"><span class="line-num">8</span><span> }</span></div>
+						<div class="code-line"><span class="line-num">9</span><span>};</span></div>
+					</div>
+
+					<button id="canvas-toggle-btn" class="canvas-control-badge" title="Управление фоновой анимацией">
+						<span>⚡ Интерактив: активен</span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- ==========================================================================
+       3. ABOUT BLOCK
+       ========================================================================== -->
+	<section class="section" id="about">
+		<div class="container">
+			<div class="section-header reveal">
+				<span class="section-tag">Обо мне</span>
+				<h2 class="section-title">Создаю интерфейсы, которые <span class="gradient-text">работают на
+						результат</span></h2>
+				<p class="section-subtitle">Обо мне, подходе к разработке и стремлении к наивысшим стандартам качества
+					веб-продуктов.</p>
+			</div>
+
+			<div class="about-grid">
+				<!-- Profile Card -->
+				<div class="glass-card about-profile-card reveal">
+					<div class="about-avatar-wrapper">
+						<img src="./src/assets/images/prifle_photo.jpg" alt="Артем веб-разработчик"
+							class="about-avatar-img" />
+					</div>
+					<h3 class="about-name">Артем</h3>
+					<p class="about-role">Web Developer</p>
+
+					<div class="about-tags">
+						<span class="about-badge">⚡ Pixel Perfect</span>
+						<span class="about-badge">🚀 Core Web Vitals</span>
+						<span class="about-badge">📱 Mobile First</span>
+						<span class="about-badge">♿ A11y Standards</span>
+					</div>
+
+					<div class="about-status-box">
+						<span class="status-dot"></span>
+						<span>Готов к новым задачам и проектам</span>
+					</div>
+				</div>
+
+				<!-- Right Content Tabs -->
+				<div class="reveal">
+					<div class="about-tabs-nav">
+						<button class="about-tab-btn active" data-tab="story">Моя история</button>
+						<button class="about-tab-btn" data-tab="principles">Принципы работы</button>
+						<button class="about-tab-btn" data-tab="experience">Опыт & Подход</button>
+					</div>
+
+					<!-- Tab 1: Story -->
+					<div class="about-tab-content active" id="tab-story">
+						<p class="about-text-lead">
+							Привет! Я занимаюсь веб-разработкой уже более года. Специализируюсь на создании
+							высокопроизводительных сайтов и веб-сервисов.
+						</p>
+						<p class="about-text">
+							Мой главный приоритет — максимальная скорость загрузки, логичная структура кода и удобство для
+							пользователя на любом устройстве. Я убежден, что грамотно сверстанный сайт без лишней
+							тяжеловесности работает стабильнее и приносит заказчику значительно больше конверсий.
+						</p>
+					</div>
+
+					<!-- Tab 2: Principles -->
+					<div class="about-tab-content" id="tab-principles">
+						<div class="principles-grid">
+							<div class="principle-card">
+								<div class="principle-icon">⚡</div>
+								<h4 class="principle-title">Максимальная скорость</h4>
+								<p class="principle-desc">Оптимизация критического пути рендеринга, ресурсов и ассетов для
+									мгновенного отклика.</p>
+							</div>
+							<div class="principle-card">
+								<div class="principle-icon">📱</div>
+								<h4 class="principle-title">Адаптивность 100%</h4>
+								<p class="principle-desc">Корректное отображение на смартфонах, планшетах, ноутбуках и 4K
+									мониторах.</p>
+							</div>
+							<div class="principle-card">
+								<div class="principle-icon">🌐</div>
+								<h4 class="principle-title">Кроссбраузерность</h4>
+								<p class="principle-desc">Стабильная работа во всех современных и более старых версиях
+									браузеров.</p>
+							</div>
+							<div class="principle-card">
+								<div class="principle-icon">🧹</div>
+								<h4 class="principle-title">Чистый код</h4>
+								<p class="principle-desc">Понятная модульная структура, легко поддающаяся масштабированию и
+									поддержке.</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Tab 3: Experience -->
+					<div class="about-tab-content" id="tab-experience">
+						<p class="about-text-lead">
+							За время работы я успешно реализовал более 10 проектов: от конверсионных промо-лендингов до крупных
+							e-commerce платформ.
+						</p>
+						<p class="about-text">
+							В каждом проекте уделяю особое внимание деталям, плавности анимаций, доступности (a11y) и
+							валидности верстки.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- ==========================================================================
+       4. SKILLS BLOCK
+       ========================================================================== -->
+	<section class="section" id="skills">
+		<div class="container">
+			<div class="section-header reveal">
+				<span class="section-tag">Стек и технологии</span>
+				<h2 class="section-title">Инструменты и <span class="gradient-text">навыки</span></h2>
+				<p class="section-subtitle">Базовый и продвинутый стек технологий для создания надежных цифровых продуктов.
+				</p>
+			</div>
+
+			<div class="skills-grid">
+				<!-- Category 1: Frontend Core -->
+				<div class="glass-card skill-category-card reveal">
+					<div class="category-header">
+						<div class="category-icon">💻</div>
+						<h3 class="category-title">Frontend Core</h3>
+					</div>
+					<div class="skills-list">
+						<div class="skill-item">
+							<div class="skill-info">
+								<span class="skill-name">HTML5 & Семантика</span>
+								<span class="skill-percentage">98%</span>
+							</div>
+							<div class="skill-bar-track">
+								<div class="skill-bar-fill" data-percentage="98%"></div>
+							</div>
+						</div>
+						<div class="skill-item">
+							<div class="skill-info">
+								<span class="skill-name">CSS3 / SCSS / Flexbox & Grid</span>
+								<span class="skill-percentage">95%</span>
+							</div>
+							<div class="skill-bar-track">
+								<div class="skill-bar-fill" data-percentage="95%"></div>
+							</div>
+						</div>
+						<div class="skill-item">
+							<div class="skill-info">
+								<span class="skill-name">JavaScript (ES6+ Vanilla)</span>
+								<span class="skill-percentage">92%</span>
+							</div>
+							<div class="skill-bar-track">
+								<div class="skill-bar-fill" data-percentage="92%"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Category 2: Optimization -->
+				<div class="glass-card skill-category-card reveal">
+					<div class="category-header">
+						<div class="category-icon">⚡</div>
+						<h3 class="category-title">Оптимизация & UX</h3>
+					</div>
+					<div class="skills-list">
+						<div class="skill-item">
+							<div class="skill-info">
+								<span class="skill-name">PageSpeed & Core Web Vitals</span>
+								<span class="skill-percentage">100%</span>
+							</div>
+							<div class="skill-bar-track">
+								<div class="skill-bar-fill" data-percentage="100%"></div>
+							</div>
+						</div>
+						<div class="skill-item">
+							<div class="skill-info">
+								<span class="skill-name">Адаптив & Mobile First</span>
+								<span class="skill-percentage">96%</span>
+							</div>
+							<div class="skill-bar-track">
+								<div class="skill-bar-fill" data-percentage="96%"></div>
+							</div>
+						</div>
+						<div class="skill-item">
+							<div class="skill-info">
+								<span class="skill-name">Кроссбраузерная верстка</span>
+								<span class="skill-percentage">94%</span>
+							</div>
+							<div class="skill-bar-track">
+								<div class="skill-bar-fill" data-percentage="94%"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Category 3: Architecture -->
+				<div class="glass-card skill-category-card reveal">
+					<div class="category-header">
+						<div class="category-icon">🛠️</div>
+						<h3 class="category-title">Инструменты</h3>
+					</div>
+					<div class="skills-list">
+						<div class="skill-item">
+							<div class="skill-info">
+								<span class="skill-name">Модульная сборка (Vite/React/ESBuild)</span>
+								<span class="skill-percentage">50%</span>
+							</div>
+							<div class="skill-bar-track">
+								<div class="skill-bar-fill" data-percentage="50%"></div>
+							</div>
+						</div>
+						<div class="skill-item">
+							<div class="skill-info">
+								<span class="skill-name">Git & Работа с API (REST)</span>
+								<span class="skill-percentage">50%</span>
+							</div>
+							<div class="skill-bar-track">
+								<div class="skill-bar-fill" data-percentage="50%"></div>
+							</div>
+						</div>
+						<div class="skill-item">
+							<div class="skill-info">
+								<span class="skill-name">SEO Оптимизация</span>
+								<span class="skill-percentage">88%</span>
+							</div>
+							<div class="skill-bar-track">
+								<div class="skill-bar-fill" data-percentage="88%"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Feature Tech Chips -->
+			<div class="skills-tags-container reveal">
+				<div class="skills-tags-title">Используемые технологии и стандарты:</div>
+				<div class="skills-tags-wrapper">
+					<span class="tech-chip">HTML5 Semantic</span>
+					<span class="tech-chip">CSS Variables</span>
+					<span class="tech-chip">JavaScript ES6+</span>
+					<span class="tech-chip">WebSockets</span>
+					<span class="tech-chip">LocalStorage API</span>
+					<span class="tech-chip">Intersection Observer</span>
+					<span class="tech-chip">REST API</span>
+					<span class="tech-chip">JSON</span>
+					<span class="tech-chip">Git</span>
+					<span class="tech-chip">Figma</span>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- ==========================================================================
+       5. PORTFOLIO / WORKS BLOCK
+       ========================================================================== -->
+	<section class="section" id="portfolio">
+		<div class="container">
+			<div class="section-header reveal">
+				<span class="section-tag">Мои работы</span>
+				<h2 class="section-title">Избранные <span class="gradient-text">проекты и кейсы</span></h2>
+				<p class="section-subtitle">Нажмите на кнопку "Детальный кейс", чтобы открыть подробный разбор задачи,
+					решения и метрик эффективности каждого проекта.</p>
+			</div>
+
+			<!-- Category Filters -->
+			<div class="portfolio-filter-nav reveal">
+				<button class="filter-btn active" data-filter="all">Все проекты</button>
+				<button class="filter-btn" data-filter="Веб-приложения">Веб-приложения</button>
+				<button class="filter-btn" data-filter="E-commerce">E-commerce</button>
+				<button class="filter-btn" data-filter="Лендинги">Лендинги</button>
+				<button class="filter-btn" data-filter="Корпоративные сайты">Корпоративные сайты</button>
+			</div>
+
+			<!-- Projects Grid -->
+			<div class="portfolio-grid">
+				<!-- Project 1 -->
+				<div class="glass-card project-card reveal" data-category="Корпоративные сайты">
+					<div class="project-thumb-box">
+						<img src="./src/assets/images/Vector_Prava.jpg" alt="Юридическое бюро «Вектор Права»"
+							class="project-img" />
+						<span class="project-overlay-badge">Корпоративные сайты</span>
+						<span class="project-speed-badge">⚡ 99/100</span>
+					</div>
+					<div class="project-body">
+						<h3 class="project-title">Юридическое бюро «Вектор Права»</h3>
+						<p class="project-desc">Спроектировал и сверстал строго адаптивный корпоративный сайт по методологии
+							BEM без громоздких фреймворков. Реализовал асинхронный модуль калькулятора стоимости юридических
+							услуг, ленивую загрузку медиаконтента через Intersection Observer API и строгую валидацию данных на
+							клиенте перед отправкой.</p>
+						<div class="project-tech-tags">
+							<span class="tech-tag">HTML5</span>
+							<span class="tech-tag">CSS3</span>
+							<span class="tech-tag">JS</span>
+						</div>
+						<div class="project-actions">
+							<button class="btn btn-case" data-case-id="case-corporate">
+								<span>Детальный кейс</span>
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+									stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+									<line x1="5" y1="12" x2="19" y2="12" />
+									<polyline points="12 5 19 12 12 19" />
+								</svg>
+							</button>
+						</div>
+					</div>
+				</div>
+
+				<!-- Project 2 -->
+				<div class="glass-card project-card reveal" data-category="E-commerce">
+					<div class="project-thumb-box">
+						<img src="./src/assets/images/project_ecommerce_store_1786558436259.jpg" alt="LuxeTech E-Store"
+							class="project-img" />
+						<span class="project-overlay-badge">E-commerce</span>
+						<span class="project-speed-badge">⚡ 99/100</span>
+					</div>
+					<div class="project-body">
+						<h3 class="project-title">LuxeTech E-Store</h3>
+						<p class="project-desc">Премиальный интернет-магазин техники с молниеносной фильтрацией товаров,
+							локальной корзиной и ленивой загрузкой.</p>
+						<div class="project-tech-tags">
+							<span class="tech-tag">HTML5</span>
+							<span class="tech-tag">CSS Grid</span>
+							<span class="tech-tag">IntersectionObserver</span>
+						</div>
+						<div class="project-actions">
+							<button class="btn btn-case" data-case-id="case-ecommerce">
+								<span>Детальный кейс</span>
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+									stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+									<line x1="5" y1="12" x2="19" y2="12" />
+									<polyline points="12 5 19 12 12 19" />
+								</svg>
+							</button>
+						</div>
+					</div>
+				</div>
+
+				<!-- Project 3 -->
+				<div class="glass-card project-card reveal" data-category="Веб-приложения">
+					<div class="project-thumb-box">
+						<img src="./src/assets/images/Service_FitMeal.jpg" alt="Сервис доставки готового питания «FitMeal»"
+							class="project-img" />
+						<span class="project-overlay-badge">Веб-приложения</span>
+						<span class="project-speed-badge">⚡ 100/100</span>
+					</div>
+					<div class="project-body">
+						<h3 class="project-title">Сервис доставки готового питания «FitMeal»</h3>
+						<p class="project-desc">Спроектировал интерактивное SPA с реактивным селектором рационов и мгновенным
+							переключением дней без перезагрузки страницы. Реализовал кастомный клиентский калькулятор БЖУ и
+							интегрировал стейт-менеджер для бесшовного сохранения выбранных блюд в локальном хранилище.</p>
+						<div class="project-tech-tags">
+							<span class="tech-tag">React</span>
+							<span class="tech-tag">Tailwind CSS</span>
+							<span class="tech-tag">Vite</span>
+						</div>
+						<div class="project-actions">
+							<button class="btn btn-case" data-case-id="case-Web-applications">
+								<span>Детальный кейс</span>
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+									stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+									<line x1="5" y1="12" x2="19" y2="12" />
+									<polyline points="12 5 19 12 12 19" />
+								</svg>
+							</button>
+						</div>
+					</div>
+				</div>
+
+				<!-- Project 4 -->
+				<div class="glass-card project-card reveal" data-category="Лендинги">
+					<div class="project-thumb-box">
+						<img src="./src/assets/images/Paws_Style.jpg" alt="Салон груминга «Paws & Style»"
+							class="project-img" />
+						<span class="project-overlay-badge">Лендинг</span>
+						<span class="project-speed-badge">⚡ 100/100</span>
+					</div>
+					<div class="project-body">
+						<h3 class="project-title">Салон груминга «Paws & Style»</h3>
+						<p class="project-desc">Спроектировал светлый стильный лендинг с акцентом на заботу о животных.
+							Реализовал интерактивный калькулятор выбора породы и комплексных услуг (гигиена, экспресс-линька,
+							шоу-груминг) с моментальным расчетом стоимости и динамической формой записи.</p>
+						<div class="project-tech-tags">
+							<span class="tech-tag">HTML5 (Semantic)</span>
+							<span class="tech-tag">SCSS (BEM)</span>
+							<span class="tech-tag">Swiper API</span>
+						</div>
+						<div class="project-actions">
+							<button class="btn btn-case" data-case-id="case-landing">
+								<span>Детальный кейс</span>
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+									stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+									<line x1="5" y1="12" x2="19" y2="12" />
+									<polyline points="12 5 19 12 12 19" />
+								</svg>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- ==========================================================================
+       6. INTERACTIVE CALCULATOR BLOCK
+       ========================================================================== -->
+	<!-- <section class="section" id="interactive">
+		<div class="container">
+			<div class="section-header reveal">
+				<span class="section-tag">Интерактивный модуль</span>
+				<h2 class="section-title">Калькулятор <span class="gradient-text">сроков и скорости</span></h2>
+				<p class="section-subtitle">Выберите параметры вашего будущего сайта и сразу рассчитайте рекомендуемый стек
+					и время разработки.</p>
+			</div>
+
+			<div class="interactive-box reveal">
+				<div class="calc-grid">
+					<div class="calc-options-col">
+						<div>
+							<div class="calc-group-title">1. Выберите тип сайта:</div>
+							<div class="calc-radio-grid">
+								<label class="calc-radio-card active" data-type="landing" data-days="4">
+									<input type="radio" name="site-type" checked />
+									<span>Лендинг / Промо</span>
+								</label>
+								<label class="calc-radio-card" data-type="service" data-days="7">
+									<input type="radio" name="site-type" />
+									<span>Корпоративный сайт</span>
+								</label>
+								<label class="calc-radio-card" data-type="ecommerce" data-days="12">
+									<input type="radio" name="site-type" />
+									<span>Интернет-магазин</span>
+								</label>
+								<label class="calc-radio-card" data-type="webapp" data-days="15">
+									<input type="radio" name="site-type" />
+									<span>Сложное веб-приложение</span>
+								</label>
+							</div>
+						</div>
+
+						<div>
+							<div class="calc-group-title">2. Дополнительные опции:</div>
+							<div class="calc-checkboxes-grid">
+								<label class="calc-check-card active" data-add-days="1">
+									<input type="checkbox" checked />
+									<span>Темная и светлая тема</span>
+								</label>
+								<label class="calc-check-card active" data-add-days="1">
+									<input type="checkbox" checked />
+									<span>100/100 PageSpeed</span>
+								</label>
+								<label class="calc-check-card" data-add-days="2">
+									<input type="checkbox" />
+									<span>Интерактивные анимации Canvas</span>
+								</label>
+								<label class="calc-check-card" data-add-days="2">
+									<input type="checkbox" />
+									<span>Поддержка старых браузеров</span>
+								</label>
+							</div>
+						</div>
+					</div> -->
+
+	<!-- Result Column -->
+	<!-- <div class="calc-result-card">
+						<div class="result-header">Оценка параметров проекта</div>
+
+						<div class="result-metric-row">
+							<span class="metric-label">Ориентировочный срок:</span>
+							<span class="metric-val" id="calc-time-val">5–8 дней</span>
+						</div>
+
+						<div class="speed-gauge-box">
+							<div class="speed-gauge-score" id="calc-speed-val">100</div>
+							<div class="speed-gauge-text">
+								<strong>Гарантия 100/100</strong><br />в Google PageSpeed Insights
+							</div>
+						</div>
+
+						<button class="btn btn-primary" id="calc-apply-btn" style="width: 100%;">
+							<span>Заказать данный расчет</span>
+							<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+								stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+								<line x1="5" y1="12" x2="19" y2="12" />
+								<polyline points="12 5 19 12 12 19" />
+							</svg>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section> -->
+
+	<!-- ==========================================================================
+       7. SERVICES & PROCESS BLOCK
+       ========================================================================== -->
+	<section class="section" id="services">
+		<div class="container">
+			<div class="section-header reveal">
+				<span class="section-tag">Услуги и Процесс</span>
+				<h2 class="section-title">Чем я могу <span class="gradient-text">помочь вашему бизнесу</span></h2>
+				<p class="section-subtitle">Прозрачные этапы разработки от первого обсуждения до успешного запуска.</p>
+			</div>
+
+			<!-- Services Grid -->
+			<div class="services-grid">
+				<div class="glass-card service-card reveal">
+					<div class="service-icon">🌐</div>
+					<h3 class="service-title">Веб-разработка с нуля</h3>
+					<p class="service-desc">Создание адаптивных сайтов любой сложности без использования громоздких
+						конструкторов.</p>
+					<div class="service-features-list">
+						<div class="service-feature-item"><span class="service-check-icon">✓</span> Чистый семантический HTML5
+						</div>
+						<div class="service-feature-item"><span class="service-check-icon">✓</span> Гибкие CSS Grid & Flexbox
+							layouts</div>
+						<div class="service-feature-item"><span class="service-check-icon">✓</span> Быстрая работа на всех
+							экранах</div>
+					</div>
+				</div>
+
+				<div class="glass-card service-card reveal">
+					<div class="service-icon">⚡</div>
+					<h3 class="service-title">Оптимизация скорости</h3>
+					<p class="service-desc">Ускорение существующих сайтов до зеленой зоны в Google PageSpeed Insights
+						(95-100%).</p>
+					<div class="service-features-list">
+						<div class="service-feature-item"><span class="service-check-icon">✓</span> Сокращение времени FCP &
+							LCP</div>
+						<div class="service-feature-item"><span class="service-check-icon">✓</span> Минификация CSS и
+							JavaScript</div>
+						<div class="service-feature-item"><span class="service-check-icon">✓</span> Оптимизация медиа-ресурсов
+						</div>
+					</div>
+				</div>
+
+				<div class="glass-card service-card reveal">
+					<div class="service-icon">🎨</div>
+					<h3 class="service-title">Интерактивные интерфейсы</h3>
+					<p class="service-desc">Внедрение современных анимаций, Canvas-эффектов, кастомных калькуляторов и темной
+						темы.</p>
+					<div class="service-features-list">
+						<div class="service-feature-item"><span class="service-check-icon">✓</span> Плавные скролл-переходы
+						</div>
+						<div class="service-feature-item"><span class="service-check-icon">✓</span> Переключение тем
+							оформления</div>
+						<div class="service-feature-item"><span class="service-check-icon">✓</span> Микро-взаимодействия и UI
+							feedback</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Process Roadmap -->
+			<div class="process-timeline-box reveal">
+				<div class="process-steps-grid">
+					<div class="process-step-item">
+						<div class="step-num-badge">01</div>
+						<h4 class="step-title">Анализ & ТЗ</h4>
+						<p class="step-desc">Обсуждение целей проекта, изучение требований и составление понятного плана.</p>
+					</div>
+					<div class="process-step-item">
+						<div class="step-num-badge">02</div>
+						<h4 class="step-title">Чистая верстка</h4>
+						<p class="step-desc">Написание модульного кода HTML/CSS/JS с соблюдением стандартов.</p>
+					</div>
+					<div class="process-step-item">
+						<div class="step-num-badge">03</div>
+						<h4 class="step-title">Оптимизация</h4>
+						<p class="step-desc">Проверка на кроссбраузерность, оптимизация загрузки и тесты на телефонах.</p>
+					</div>
+					<div class="process-step-item">
+						<div class="step-num-badge">04</div>
+						<h4 class="step-title">Релиз & Передача</h4>
+						<p class="step-desc">Запуск сайта, тестирование и консультации по дальнейшей эксплуатации.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- ==========================================================================
+       8. CONTACT BLOCK
+       ========================================================================== -->
+	<section class="section" id="contact">
+		<div class="container">
+			<div class="section-header reveal">
+				<span class="section-tag">Обратная связь</span>
+				<h2 class="section-title">Давайте обсудим <span class="gradient-text">ваш проект</span></h2>
+				<p class="section-subtitle">Напишите мне напрямую в мессенджер.</p>
+			</div>
+
+			<div class="contact-flex">
+				<!-- Direct Contacts -->
+				<div class="contact-info-col reveal">
+					<div class="glass-card contact-direct-card" data-copy="@artem_Ricki">
+						<div class="contact-icon-box">💬</div>
+						<div>
+							<div class="contact-direct-title">Telegram:</div>
+							<div class="contact-direct-value">@artem_Ricki</div>
+						</div>
+						<span class="copy-badge">Копировать</span>
+					</div>
+
+					<div class="glass-card contact-direct-card" data-copy="artem.kinforg.13@gmail.com">
+						<div class="contact-icon-box">✉️</div>
+						<div>
+							<div class="contact-direct-title">Email:</div>
+							<div class="contact-direct-value">artem.kinforg.13@gmail.com</div>
+						</div>
+						<span class="copy-badge">Копировать</span>
+					</div>
+
+					<div class="glass-card contact-direct-card" data-copy="https://github.com/hishitani">
+						<div class="contact-icon-box">🐙</div>
+						<div>
+							<div class="contact-direct-title">GitHub Portfolio:</div>
+							<div class="contact-direct-value">https://github.com/hishitani</div>
+						</div>
+						<span class="copy-badge">Копировать</span>
+					</div>
+				</div>
+
+				<!-- Contact Form -->
+				<!-- <div class="glass-card contact-form-box reveal">
+					<form id="contact-form" class="contact-form" novalidate>
+						<div class="form-row-2">
+							<div class="form-group">
+								<label for="contact-name" class="form-label">Ваше имя *</label>
+								<input type="text" id="contact-name" class="form-input" placeholder="Александр" required />
+								<span class="form-error-msg"></span>
+							</div>
+							<div class="form-group">
+								<label for="contact-email" class="form-label">Email или Telegram *</label>
+								<input type="text" id="contact-email" class="form-input"
+									placeholder="example@gmail.com или @username" required />
+								<span class="form-error-msg"></span>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="contact-type" class="form-label">Тип проекта</label>
+							<select id="contact-type" class="form-select">
+								<option value="landing">Лендинг / Промо-сайт</option>
+								<option value="service">Корпоративный сайт</option>
+								<option value="ecommerce">Интернет-магазин</option>
+								<option value="webapp">Веб-приложение</option>
+								<option value="optimization">Оптимизация существующего сайта</option>
+							</select>
+						</div>
+
+						<div class="form-group">
+							<label for="contact-message" class="form-label">Описание задачи *</label>
+							<textarea id="contact-message" class="form-textarea"
+								placeholder="Расскажите о вашем проекте, задачах и желаемых сроках..." required></textarea>
+							<span class="form-error-msg"></span>
+						</div>
+
+						<div class="contact-form-footer">
+							<span class="privacy-notice">🔒 Данные не передаются третьим лицам.</span>
+							<button type="submit" class="btn btn-primary">
+								<span>Отправить заявку</span>
+								<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+									stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+									<line x1="22" y1="2" x2="11" y2="13" />
+									<polygon points="22 2 15 22 11 13 2 9 22 2" />
+								</svg>
+							</button>
+						</div>
+					</form>
+				</div> -->
+			</div>
+		</div>
+	</section>
+
+	<!-- ==========================================================================
+       9. FOOTER BLOCK
+       ========================================================================== -->
+	<footer class="site-footer">
+		<div class="container footer-inner">
+			<div class="footer-top">
+				<div class="footer-logo">
+					<span class="logo-badge">A</span>
+					<span>Артем<span class="logo-dot">.dev</span></span>
+				</div>
+
+				<div class="footer-socials">
+					<a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-link"
+						title="GitHub">🐙</a>
+					<a href="https://t.me" target="_blank" rel="noopener noreferrer" class="social-link"
+						title="Telegram">💬</a>
+					<a href="mailto:artem.kinforg.13@gmail.com" class="social-link" title="Email">✉️</a>
+				</div>
+			</div>
+
+			<div class="footer-bottom">
+				<div>© 2026 Артем — Веб-разработка. Все права защищены.</div>
+				<button id="back-to-top" class="back-to-top-btn">
+					<span>Наверх</span>
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+						stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+						<line x1="12" y1="19" x2="12" y2="5" />
+						<polyline points="5 12 12 5 19 12" />
+					</svg>
+				</button>
+			</div>
+		</div>
+	</footer>
+
+	<!-- Dynamic Modal Overlay Container -->
+	<div class="modal-overlay" id="modal-overlay">
+		<div class="modal-card" id="modal-card">
+			<button class="modal-close-btn" id="modal-close" aria-label="Закрыть">✕</button>
+			<div id="modal-dynamic-content"></div>
+		</div>
+	</div>
+
+	<!-- Entry Script -->
+	<script type="module" src="./src/main.js"></script>
+</body>
+
+</html>

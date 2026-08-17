@@ -1,0 +1,168 @@
+/* ==========================================================================
+   INTERACTIVE CALCULATOR BLOCK STYLES
+   ========================================================================== */
+
+.interactive-box {
+  padding: 40px;
+  background: var(--bg-card);
+  backdrop-filter: var(--glass-backdrop);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--card-shadow);
+}
+
+.calc-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.calc-options-col {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.calc-group-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: var(--text-primary);
+}
+
+.calc-radio-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.calc-radio-card {
+  padding: 14px 18px;
+  border-radius: var(--radius-md);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+}
+
+.calc-radio-card input {
+  display: none;
+}
+
+.calc-radio-card.active,
+.calc-radio-card:hover {
+  border-color: var(--accent-primary);
+  color: var(--text-primary);
+  background: rgba(0, 220, 130, 0.08);
+}
+
+.calc-checkboxes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.calc-check-card {
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+}
+
+.calc-check-card.active {
+  border-color: var(--accent-primary);
+  color: var(--text-primary);
+  background: rgba(0, 220, 130, 0.08);
+}
+
+/* Result Box */
+.calc-result-card {
+  padding: 30px;
+  border-radius: var(--radius-lg);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color-hover);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: sticky;
+  top: 100px;
+}
+
+.result-header {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 14px;
+}
+
+.result-metric-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.metric-label {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+}
+
+.metric-val {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--accent-primary);
+  font-family: var(--font-family-mono);
+}
+
+.speed-gauge-box {
+  padding: 16px;
+  border-radius: var(--radius-md);
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.speed-gauge-score {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--accent-emerald);
+  font-family: var(--font-family-mono);
+}
+
+.speed-gauge-text {
+  font-size: 0.82rem;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+@media (max-width: 992px) {
+  .calc-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .calc-radio-grid,
+  .calc-checkboxes-grid {
+    grid-template-columns: 1fr;
+  }
+  .interactive-box {
+    padding: 24px 16px;
+  }
+}

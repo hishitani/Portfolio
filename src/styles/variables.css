@@ -1,0 +1,99 @@
+/* ==========================================================================
+   CSS VARIABLES & THEME DEFINITIONS
+   ========================================================================== */
+
+:root {
+	/* Fonts - Modern Grotesk Stack */
+	--font-family-grotesk: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+	--font-family-mono: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+
+	/* Transitions */
+	--transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+	--transition-normal: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+	--transition-slow: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+
+	/* Border Radius */
+	--radius-sm: 8px;
+	--radius-md: 14px;
+	--radius-lg: 20px;
+	--radius-xl: 28px;
+	--radius-full: 9999px;
+
+	/* Z-Indices */
+	--z-back: -1;
+	--z-normal: 1;
+	--z-header: 100;
+	--z-drawer: 200;
+	--z-modal: 1000;
+	--z-toast: 1100;
+
+	/* Layout */
+	--container-max: 1240px;
+	--container-padding: 24px;
+}
+
+/* ==========================================================================
+   DARK THEME (DEFAULT - Sleek Interface)
+   ========================================================================== */
+[data-theme="dark"],
+:root:not([data-theme="light"]) {
+	--bg-primary: #0A0A0C;
+	--bg-secondary: #16161A;
+	--bg-tertiary: #1E1E24;
+	--bg-card: #16161A;
+	--bg-card-hover: #1E1E26;
+	--bg-input: #0A0A0C;
+
+	--border-color: #2A2A2F;
+	--border-color-hover: #00DC82;
+	--border-accent: rgba(0, 220, 130, 0.3);
+
+	--text-primary: #E0E0E6;
+	--text-secondary: #88888F;
+	--text-muted: #55555A;
+
+	--accent-primary: #00DC82;
+	/* Electric Emerald */
+	--accent-primary-hover: #00BF72;
+	--accent-secondary: #00A3FF;
+	/* Cyber Cyan */
+	--accent-emerald: #00DC82;
+	/* Online Status / Metrics */
+	--accent-amber: #FFB800;
+
+	--accent-gradient: linear-gradient(135deg, #00DC82 0%, #00A3FF 100%);
+	--accent-glow: 0 0 30px rgba(0, 220, 130, 0.25);
+	--card-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+	--glass-backdrop: blur(16px);
+}
+
+/* ==========================================================================
+   LIGHT THEME (Sleek Adaptation)
+   ========================================================================== */
+[data-theme="light"] {
+	--bg-primary: #F2F2F6;
+	--bg-secondary: #FFFFFF;
+	--bg-tertiary: #E6E6EC;
+	--bg-card: #FFFFFF;
+	--bg-card-hover: #F8F8FC;
+	--bg-input: #FFFFFF;
+
+	--border-color: #D2D2D8;
+	--border-color-hover: #00C272;
+	--border-accent: rgba(0, 194, 114, 0.4);
+
+	--text-primary: #0A0A0C;
+	--text-secondary: #55555A;
+	--text-muted: #88888F;
+
+	--accent-primary: #00A862;
+	--accent-primary-hover: #008F52;
+	--accent-secondary: #0082CC;
+	--accent-emerald: #00A862;
+	--accent-amber: #D97706;
+
+	--accent-gradient: linear-gradient(135deg, #00A862 0%, #0082CC 100%);
+	--accent-glow: 0 10px 25px rgba(0, 168, 98, 0.2);
+	--card-shadow: 0 15px 30px -10px rgba(10, 10, 12, 0.08);
+	--glass-backdrop: blur(12px);
+}

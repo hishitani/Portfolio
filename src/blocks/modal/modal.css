@@ -1,0 +1,204 @@
+/* ==========================================================================
+   MODAL DIALOG & TOAST STYLES
+   ========================================================================== */
+
+/* Modal Backdrop */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  background: rgba(10, 10, 12, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-normal);
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Modal Content Card */
+.modal-card {
+  width: 100%;
+  max-width: 820px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+  position: relative;
+  transform: scale(0.92);
+  transition: transform var(--transition-normal);
+}
+
+.modal-overlay.active .modal-card {
+  transform: scale(1);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  font-size: 1.2rem;
+  transition: all var(--transition-fast);
+}
+
+.modal-close-btn:hover {
+  background: #EF4444;
+  color: #FFFFFF;
+  border-color: #EF4444;
+}
+
+/* Case Modal Internal Content */
+.case-modal-hero {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--bg-tertiary);
+}
+
+.case-modal-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.case-modal-badge {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  background: var(--accent-primary);
+  color: #000000;
+  font-weight: 800;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  box-shadow: 0 10px 20px rgba(0, 220, 130, 0.3);
+}
+
+.case-modal-body {
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.case-modal-category {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.case-modal-title {
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  line-height: 1.25;
+}
+
+.case-modal-meta {
+  display: flex;
+  gap: 30px;
+  padding: 16px 20px;
+  border-radius: var(--radius-md);
+  background: var(--bg-tertiary);
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  flex-wrap: wrap;
+}
+
+.case-modal-section h3 {
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+}
+
+.case-modal-section p {
+  line-height: 1.7;
+}
+
+.case-modal-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.case-modal-list li {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.case-modal-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.case-modal-code {
+  padding: 18px;
+  border-radius: var(--radius-md);
+  background: #0D1117;
+  color: #E6EDE3;
+  font-family: var(--font-family-mono);
+  font-size: 0.85rem;
+  overflow-x: auto;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Toast Component */
+.toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: var(--z-toast);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  pointer-events: none;
+}
+
+.toast-item {
+  padding: 16px 24px;
+  border-radius: var(--radius-md);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--accent-primary);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  font-size: 0.92rem;
+  font-weight: 600;
+  pointer-events: auto;
+  animation: slideInToast 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideInToast {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 576px) {
+  .modal-overlay {
+    padding: 12px;
+  }
+  .case-modal-body {
+    padding: 24px 18px;
+  }
+}

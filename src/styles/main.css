@@ -1,0 +1,18 @@
+/* ==========================================================================
+   MAIN COMPOSITE STYLESHEET
+   Imports modular block CSS files for performance and maintainability
+   ========================================================================== */
+
+@import './variables.css';
+@import './reset.css';
+
+@import '../blocks/header/header.css';
+@import '../blocks/hero/hero.css';
+@import '../blocks/about/about.css';
+@import '../blocks/skills/skills.css';
+@import '../blocks/portfolio/portfolio.css';
+@import '../blocks/interactive/interactive.css';
+@import '../blocks/services/services.css';
+@import '../blocks/contact/contact.css';
+@import '../blocks/footer/footer.css';
+@import '../blocks/modal/modal.css';
